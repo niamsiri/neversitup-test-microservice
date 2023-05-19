@@ -5,15 +5,9 @@ services:
     image: mongo
     ports:
       - 27017:27017
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: root
-      MONGO_INITDB_USERNAME: root
-      MONGO_INITDB_PASSWORD: root
-      MONGO_INITDB_DATABASE: neversitupdb
-    restart: always
     volumes:
       - mongodb:/data/db
+    restart: unless-stopped
 
 volumes:
   mongodb:
